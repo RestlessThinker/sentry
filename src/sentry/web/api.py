@@ -201,7 +201,7 @@ class APIView(BaseView):
 
             if auth.version >= 3:
                 # Version 3 enforces secret key for server side requests
-                if origin is None and not auth.key:
+                if not auth.secret_key:
                     return HttpResponse('Missing required attribute in authentication header: sentry_secret', status=400)
 
             try:
