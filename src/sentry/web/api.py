@@ -233,7 +233,7 @@ class APIView(BaseView):
                         raise InvalidRequest('Missing required Origin or Referer header')
                 else:
                     # Version 3 enforces secret key for server side requests
-                    if not auth.secret_key:
+                    if not auth.key:
                         raise InvalidRequest('Missing required attribute in authentication header: sentry_secret')
 
             try:
